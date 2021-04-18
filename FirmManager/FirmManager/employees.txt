@@ -1,0 +1,2 @@
+EmployeeDepartmentID: 22 EmployeeName: Kolio EmployeeEGN: 9999 EmployeeExperience(y/m/d): 2 6 20 EmployeeWorkHoursDaily: 8 EmployeeNumberProjects: 2 Name: |Maintaining||TechSupport|
+EmployeeDepartmentID: 22 EmployeeName: Ivan EmployeeEGN: 300 EmployeeExperience(y/m/d): 10 10 10 EmployeeWorkHoursDaily: 8 EmployeeNumberProjects: 1 Name: |Ohrana|

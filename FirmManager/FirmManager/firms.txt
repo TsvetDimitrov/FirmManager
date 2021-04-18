@@ -1,0 +1,2 @@
+ID: 20 FirmName: tsvet isRegisteredForDDS: 1
+ID: 25 FirmName: 1 isRegisteredForDDS: 1
