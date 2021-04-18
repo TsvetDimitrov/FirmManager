@@ -329,6 +329,9 @@ std::ostream& operator<<(std::ostream& os, const Firm& firm) {
 void addNewFirm();
 void addNewDepartment();
 void addEmployees();
+void getFirmNames(std::vector<Firm>& names);
+void getDepartments();
+void getEmployees();
 bool isUniqueFirmId(Firm object, std::string filename);
 bool isUniqueDepartmentId(Department object, std::string filename);
 bool isUniqueEmployeeEGN(Employee emp, std::string filename);
@@ -366,15 +369,19 @@ int main()
         break;
     }
     case 4: {
-
+        std::vector<Firm> firmNames;
+        getFirmNames(firmNames);
+        for (Firm name : firmNames) {
+            std::cout << name << std::endl;
+        }
         break;
     }
     case 5: {
-
+        getDepartments();
         break;
     }
     case 6: {
-
+        getEmployees();
         break;
     }
     case 7: {
@@ -453,6 +460,76 @@ void addEmployees() {
         }
         appendFileWithObject(employee, "employees.txt");
     }
+}
+// 4Function Not Uploaded.
+void getFirmNames(std::vector<Firm>& names) {
+    std::ifstream infile;
+    infile.open("firms.txt", std::ios::in);
+    if (infile.fail()) {
+        std::cout << "File was not found\n";
+        system("PAUSE");
+        exit(1);
+    }
+
+    int id;
+    std::string firmName;
+    int isRegisteredForDDS;
+    std::string ignored;
+    while (infile >> ignored >> id >> ignored >> firmName >> ignored >> isRegisteredForDDS) {
+        Firm firm(id, firmName, isRegisteredForDDS);
+        names.push_back(firm);
+    }
+
+    infile.close();
+}
+
+//5 Function not Uploaded.
+void getDepartments() {
+    std::ifstream infile;
+    infile.open("departments.txt", std::ios::in);
+    if (infile.fail()) {
+        std::cout << "File was not found\n";
+        system("PAUSE");
+        exit(1);
+    }
+    int departmentID;
+    int firmID;
+    std::string departmentName;
+    std::string ignored;
+    std::vector<int> departments;
+    std::cout << "Enter number of firmID to be checked." << std::endl;
+    int firmIDtoCheck;
+    std::cin >> firmIDtoCheck;
+    while (infile >> ignored >> firmID >> ignored >> departmentID >> ignored >> departmentName >> ignored) {
+        if (firmID == firmIDtoCheck) {
+            departments.push_back(departmentID);
+        }
+    }
+    
+
+    if (departments.size() != 0) {
+        std::cout << "DepartmentsID's related to checkedFirm are: ";
+        for (auto i = departments.begin(); i != departments.end(); ++i) {
+            std::cout << *i << " ";
+        }
+    }
+    else {
+        std::cout << "Given number of firmID or department does not exist." << std::endl;
+    }    
+    infile.close();
+}
+
+//6 Function not uploaded.
+void getEmployees() {
+    std::ifstream infile;
+    infile.open("employees.txt", std::ios::in);
+    if (infile.fail()) {
+        std::cout << "File was not found\n";
+        system("PAUSE");
+        exit(1);
+    }
+
+
 }
 
 template <class T>
