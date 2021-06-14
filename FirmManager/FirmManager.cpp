@@ -1,4 +1,4 @@
-/**
+/*
 * Създайте приложение, което дава информация за отделите и служителите в
 дадена фирма.Да има възможност за избор на вида на фирмата (ООД, АД,
 ЕООД и т.н.), както и да ли е регистрирана по ДДС или не.
@@ -8,14 +8,23 @@
 имена, ЕГН, трудов стаж, договор на колко часа е, в кои проекти участва.
 Класовете (най-малко 3 класа при реализацията) трябва да капсулира
 всичките детайли. Използват се private инстанции на променливите за
-съхраняване на различните детайли. Трябва да има най-малко два
+съхраняване на различните детайли. 
+
+
+Трябва да има най-малко два
 конструктора, public getters/setters за private инстанции на
-променливите(30 точки).
+променливите(30 точки). - DONE
+
 Необходимо е да извършвате проверка на входните данни (10 точки).
+
   Да се предефинира операцията <<, която да се използва за извеждане на
-данните (10 точки). Данните да се четат и съхраняват във файл (20
-точки).
-Класовете да се опишат с UML клас диаграма (10 точки).
+данните (10 точки). - DONE
+
+Данните да се четат и съхраняват във файл (20
+точки). - DONE
+
+Класовете да се опишат с UML клас диаграма (10 точки). - DONE
+
   Задължително данните да се въвеждат динамично, чрез меню.
 
 Да се изготви документация, която да се предаде по време на зашитата на
@@ -500,7 +509,7 @@ void getDepartments() {
     std::cout << "Enter number of firmID to be checked." << std::endl;
     int firmIDtoCheck;
     std::cin >> firmIDtoCheck;
-    while (infile >> ignored >> firmID >> ignored >> departmentID >> ignored >> departmentName >> ignored) {
+    while (infile >> ignored >> firmID >> ignored >> departmentID >> ignored >> departmentName >> ignored >> ignored >> ignored >> ignored >> ignored >> ignored) {
         if (firmID == firmIDtoCheck) {
             departments.push_back(departmentID);
         }
@@ -536,7 +545,7 @@ void getEmployees() {
     int depIdToCheck;
     std::string workerName;
     int egn;
-    while (infile >> ignored >> depIdToCheck >> ignored >> workerName >> ignored >> egn >> ignored) {
+    while (infile >> ignored >> depIdToCheck >> ignored >> workerName >> ignored >> egn >> ignored >> ignored >> ignored >> ignored >> ignored>> ignored >> ignored >> ignored >> ignored>> ignored) {
         if (depId == depIdToCheck) {
             workers.push_back(workerName);
         }
